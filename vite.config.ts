@@ -16,10 +16,9 @@ export default defineConfig({
         'src/*.js',
         'src/**/*.tsx',
         'src/*.tsx',
-        'src/**/*.vue',
-        'src/*.vue'
+        'src/**/*.vue'
       ],
-      exclude: ['**/node_modules/**'],
+      exclude: ['**/node_modules/**']
     }),
     vueJsx(),
   ],
