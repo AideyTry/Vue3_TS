@@ -1,7 +1,17 @@
+/*
+ * @Author: Aiden(戴林波)
+ * @Date: 2022-10-05 16:39:50
+ * @LastEditTime: 2022-10-08 21:51:07
+ * @LastEditors: Aiden(戴林波)
+ * @Description: 
+ * @Email: jason_dlb@sina.cn
+ */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import eslintPlugin from 'vite-plugin-eslint'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+// import path from 'path'
+const path = require('path')
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,10 +26,15 @@ export default defineConfig({
         'src/*.js',
         'src/**/*.tsx',
         'src/*.tsx',
-        'src/**/*.vue'
+        'src/**/*.vue',
       ],
       exclude: ['**/node_modules/**']
     }),
     vueJsx(),
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src')
+    }
+  }
 })
