@@ -1,7 +1,7 @@
 /*
  * @Author: Aiden(戴林波)
  * @Date: 2022-10-05 16:39:50
- * @LastEditTime: 2022-10-08 21:51:07
+ * @LastEditTime: 2022-10-09 10:01:45
  * @LastEditors: Aiden(戴林波)
  * @Description: 
  * @Email: jason_dlb@sina.cn
@@ -35,6 +35,14 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
+    }
+  },
+  // 指定传递给 CSS 预处理器的选项
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/styles/variables.scss";`
+      }
     }
   }
 })
