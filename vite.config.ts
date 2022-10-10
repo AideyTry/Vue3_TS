@@ -1,7 +1,7 @@
 /*
  * @Author: Aiden(戴林波)
  * @Date: 2022-10-05 16:39:50
- * @LastEditTime: 2022-10-09 10:01:45
+ * @LastEditTime: 2022-10-10 23:25:16
  * @LastEditors: Aiden(戴林波)
  * @Description: 
  * @Email: jason_dlb@sina.cn
@@ -42,6 +42,15 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `@import "@/styles/variables.scss";`
+      }
+    }
+  },
+  server: {
+    proxy: {
+      '/admin': {
+        target: 'https://shop.fed.lagou.com/api/',
+        secure: false,
+        changeOrigin: true
       }
     }
   }
