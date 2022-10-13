@@ -9,15 +9,19 @@
 import { ref, onMounted } from 'vue'
 import { useStore } from '../../store'
 import { getLoginInfo } from '@/api/common'
+import type { LoginInfo } from '@/api/types/common'
 
 const store = useStore()
 
 console.log('store.state=', store.state.count)
 const a = ref(0)
+const list = ref<LoginInfo['slide']>([])
 
 onMounted(() => {
-  getLoginInfo().then(res => {
-    console.log('res==', res)
+  getLoginInfo().then(data => {
+    console.log('data==', data)
+    list.value = data.slide
+    console.log('list.value===', list.value)
   })
 })
 </script>

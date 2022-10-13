@@ -1,14 +1,15 @@
 /*
  * @Author: Aiden(戴林波)
  * @Date: 2022-10-09 23:10:14
- * @LastEditTime: 2022-10-10 23:19:20
+ * @LastEditTime: 2022-10-13 22:58:03
  * @LastEditors: Aiden(戴林波)
  * @Description: 
  * @Email: jason_dlb@sina.cn
  */
-import axios from 'axios'
+import axios, { AxiosRequestConfig } from 'axios'
 
 const request = axios.create({
+    // baseURL: 'https://shop.fed.lagounews.com/api/'
     baseURL: ''
 })
 
@@ -31,4 +32,6 @@ axios.interceptors.response.use(function (response) {
     return Promise.reject(error);
   });
 
-export default request
+export default <T = any>(config: AxiosRequestConfig) => {
+  return request(config).then( res => res.data.data as T)
+}
