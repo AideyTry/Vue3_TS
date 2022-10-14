@@ -1,7 +1,7 @@
 /*
  * @Author: Aiden(戴林波)
  * @Date: 2022-10-09 23:10:14
- * @LastEditTime: 2022-10-13 22:58:03
+ * @LastEditTime: 2022-10-14 23:04:00
  * @LastEditors: Aiden(戴林波)
  * @Description: 
  * @Email: jason_dlb@sina.cn
@@ -10,7 +10,7 @@ import axios, { AxiosRequestConfig } from 'axios'
 
 const request = axios.create({
     // baseURL: 'https://shop.fed.lagounews.com/api/'
-    baseURL: ''
+    baseURL: import.meta.env.VITE_APP_TITLE
 })
 
 axios.interceptors.request.use(function (config) {

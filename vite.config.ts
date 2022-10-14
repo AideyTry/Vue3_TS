@@ -1,7 +1,7 @@
 /*
  * @Author: Aiden(戴林波)
  * @Date: 2022-10-05 16:39:50
- * @LastEditTime: 2022-10-12 12:10:29
+ * @LastEditTime: 2022-10-14 22:47:51
  * @LastEditors: Aiden(戴林波)
  * @Description: 
  * @Email: jason_dlb@sina.cn
@@ -45,13 +45,13 @@ export default defineConfig({
       }
     }
   },
-  server: {
-    proxy: {
-      '/admin': {
-        target: 'https://shop.fed.lagounews.com/api/',
-        secure: false,
-        changeOrigin: true
-      }
-    }
-  }
+  // server: {
+  //   proxy: {
+  //     '/admin': {
+  //       target: 'https://shop.fed.lagounews.com/api/',
+  //       secure: false,
+  //       changeOrigin: true
+  //     }
+  //   }
+  // }
 })
